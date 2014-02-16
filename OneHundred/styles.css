@@ -1,0 +1,78 @@
+td {
+	width: 50px;
+	height: 50px;
+	margin: -1px;
+	padding: 3px;
+	color: black;
+	border: 1px solid purple;
+}
+
+ul {
+	display: absolute;
+}
+
+ul li {
+	display: relative;
+	list-style-type: none;
+	float: left;
+}
+
+.left {
+	position: absolute;
+	float: left;
+}
+
+.right {
+	position: relative;
+	float: right;
+}
+
+.red {
+	color: red;
+	
+}
+
+.blue {
+	color: blue;
+}
+
+.yellow {
+	color: yellow;
+}
+
+.red-background {
+	background-color: rgba(255, 0, 0, 1);
+}
+
+.blue-background {
+	background-color: rgba(0, 0, 255, 1);
+}
+
+.yellow-background {
+	background-color: rgba(255, 255, 0, 1);
+}
+
+.stump {
+	display: none;
+}
+
+.hidden2 {
+	display: none;
+}
+
+.hidden5 {
+	display: none;
+}
+.hidden10 {
+	display: none;
+}
+
+.square {
+	width: 60px;
+	height: 60px;
+	display: relative;
+	list-style-type: none;
+	float: left;
+}
+
+

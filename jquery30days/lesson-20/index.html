@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Lesson 20</title>
+	<style>
+	body { width: 600px; margin: auto; }
+	ul { list-style: none; }
+	li { padding-bottom: 1em; }
+	img { float: left; padding-right: 1em; }
+	a { text-decoration: none; color: #333; }
+	</style>
+</head>
+<body>
+
+<ul class="tweets">
+	<script id="tweets-template" type="text/x-handlebars-template">
+		{{#each this}}
+		<li>
+			<img src="{{thumb}}" alt="{{author}}">
+			<p><a href="{{url}}">{{tweet}}</a></p>
+		</li>
+		{{/each}}
+	</script>
+</ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script src="http://cloud.github.com/downloads/wycats/handlebars.js/handlebars-1.0.0.beta.6.js"></script>
+
+<script>
+
+(function() {
+	
+	var worker = new Worker('work.js');
+	
+	worker.addEventListener('message', function(e) {
+		console.log(e.data);
+	}, false);
+
+	worker.postMessage("Hello World!");
+
+	worker.terminate();
+
+	var Twitter = {
+		init: function( config ) {
+			//this refers to Twitter
+			this.url = 'https://search.twitter.com/search.json?q=' + config.query + '&callback=?';
+			this.template = config.template;
+			this.container = config.container;
+			this.fetch();
+			console.log("Pick up the video again at 19:00 minutes or so. https://tutsplus.com/lesson/the-twitter-api/");
+
+		},
+
+		attachTemplate: function() {
+			//console.log(this.tweets);
+			var template = Handlebars.compile( this.template );
+			//console.log("is this actually working?");
+
+			this.container.append(template( this.tweets ));
+			//console.log(html);
+		},
+
+		fetch: function() {
+			// this still refers to the Twitter object
+			var self = this; // caching the Twitter object
+			$.getJSON( this.url, function( data ) {
+				self.tweets = $.map( data.results, function( tweet ) {
+					return { 
+						author: tweet.from_user,
+						tweet: tweet.text,
+						thumb: tweet.profile_image_url,
+						url: 'http://twitter.com/' + tweet.from_user + '/status/' + tweet.id_str
+						};
+				});
+
+				self.attachTemplate();
+				console.log(self.tweets);
+			})	
+		}
+	}
+
+	
+	Twitter.init( {
+		template: $('#tweets-template').html(),
+		container: $('ul.tweets'),
+		query: '@corydoctorow'
+	});
+	
+
+})();
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+html {
+	background-color: #eebbff;
+}
+ul li {
+	list-style-stype: none;
+	display: inline-block;
+}
+
+.zebra {
+	background-color: #9955aa;
+	color: #ffffff;
+}
+td {
+	padding: 3px;
+}
+
+tr.zebraHover {
+	background-color: #FF33CD;
+}

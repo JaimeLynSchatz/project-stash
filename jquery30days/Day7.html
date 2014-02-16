@@ -1,0 +1,42 @@
+<!doctype hmtl>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Mock Up Blog</title>
+	<link rel="stylesheet" href="nostyle.css" />
+</head>
+<body>
+
+<article>
+<h1>My Awesome Blog Post</h1>
+
+<p>
+	What a to-do to die today at a minute or two to two.
+	A thing distinctly hard to say but harder still to do.
+	For they'll beat a tattoo at twenty to two. A-ra-ta-ta-ta-ta-ta-too.  And the dragon will come when he hears the drum at a minute or two to two today.  At a minute or two to two.
+</p>
+<p>
+	<span class="co">Now here's a second paragraph that has nothing real to say.  I just need two paragraphs.</span>
+</p>
+</article>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+(function() {
+	console.log('debugging sucks cheese');
+	
+	var co = $('span.co').each(function() {
+		var $this = $(this);
+		$('<blockquote></blockquote>', {
+			class: 'co',
+			text: $this.text()
+		}).prependTo( $this.closest('p') );
+		
+	});
+
+})();
+
+</script>
+</body>
+</html>

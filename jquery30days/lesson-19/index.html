@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Mustache</title>
+<style>
+h2 span { color: gray;
+			font-size: .8em;}
+</style>
+</head>
+<body>
+
+<p>What the hay?</p>
+
+<ul class="tweets">
+<script id="template" type="text/x-handlebars.template">
+	{{#each this}}
+	<li>
+		<h2>{{fullName author}} {{#if age}}<span>- {{age}}</span>{{/if}}</h2>
+		<p>{{{tweet}}}</p>
+
+		<h5>{{quote}}</h5>
+		{{#unless quote}}
+			<h5>Author does not have a quote</h5>
+		{{/unless}}
+	</li>
+	{{/each}}
+</script>
+</ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script src="https://raw.github.com/wycats/handlebars.js/1.0.0-rc.3/dist/handlebars.js"></script>
+
+<script>
+
+(function() {
+	
+	$('body').prepend( $('<p>Made with Love and jQuery</p>') );
+	var data = [
+		{
+			author: { first: "Jaime", last: "Schatz"},
+			tweet: "This guys moves too fast sometimes!",
+			age: 0x24
+		
+		},
+		{
+			author: { first: "Jaime", last:  "Schatz"},
+			tweet: "This guys moves too fast sometimes!",
+			quote: "Keep Hacking!"
+		},
+		{
+			author: { first: "Jaime", last: "Schatz"},
+			tweet: "This guys moves <b>too</b> fast sometimes!",
+			quote: "Persistence Pays!"
+		},
+		{
+			author: { first: "Jaime",  last: "Schatz"},
+			tweet: "This guys moves too fast sometimes!",
+			quote: "Flow Uphill!"
+		}
+	];
+
+	Handlebars.registerHelper('fullName', function( author ) {
+		return author.first + " " + author.last;
+	});
+	var template = Handlebars.compile( $('#template').html() );
+
+	var temp = template(data);
+	$('ul.tweets').append(temp);
+
+})();
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

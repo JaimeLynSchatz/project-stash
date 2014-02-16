@@ -1,0 +1,57 @@
+<!--
+	What you missed on the quiz:
+	$('div.box').on('click', function() {
+	$(this).removeClass('box');
+	});
+-->
+
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<style>
+	li { color: purple;}
+	.emphasis {color: green;}
+	
+	</style>
+	
+</head>
+<body>
+<div class="container">
+
+	<ul class="emphasis">
+		<li>hello</li>
+		<li>hello 2</li>
+		<li>hello again</li>
+		<li>another item now</li>
+		<li>and one more</li>
+		<li>
+			<ul>
+				<li>hello 3</li>
+		</li>	
+			</ul>
+	</ul>
+</div>
+	<script>
+		//$('ul.emphasis')
+		//	.children('li')
+		//	.eq(4)
+		//	.next().text('added with jQuery');
+		//$('ul.emphasis').children('li').eq(5).prev().text('I just added your next item');
+	
+		$('li').parents('.container').removeClass('container');
+
+		$('ul.emphasis')
+		.children('li')
+		.eq(4).
+		prev().
+		text('also added with jQuery');
+
+
+		console.log($('ul').parents('container'));
+		console.log($('ul').closest('container'));
+	</script>
+
+</body>
+</html>

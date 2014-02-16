@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Mom's Mini Paint Game</title>
+	<style>
+	body {
+		margin: 0px;
+		padding: 0px;
+	}
+	aside {
+		position: relative;
+		float: right;
+		margin-right: 25px;
+		padding: 0px;
+	}
+	canvas {
+		border: 1px solid black;
+	}
+	
+	#palette > div {
+		width: 30px; 
+		height: 30px;
+		/*display: inline-block;*/
+	}
+
+	#red { background-color: red; }
+	#orange { background-color: orange; }
+	#yellow { background-color: yellow; }
+	#green { background-color: green; }
+	#blue { background-color: blue; }
+	#violet { background-color: Violet; }
+	#indigo{ background-color: Indigo; }
+	#erase { background-color: inherit; }
+
+	</style>
+</head>
+<body>
+	
+	<canvas id="myCanvas" width="1000px" height="690px">
+	</canvas>
+	<aside>
+		<p>Press F5 or click refresh to start over<p>
+		<p>Your mouse is at: <span id="status"></span></p>
+		<div id="palette">
+			<div id="red"></div>
+			<div id="orange"></div>
+			<div id="yellow"></div>
+			<div id="green"></div>
+			<div id="blue"></div>
+			<div id="violet"></div>
+			<div id="indigo"></div>
+			<div id="erase" class="erase">ERASE</div>
+		</div>
+
+	</aside>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
+	jQuery(document).ready(function(e){
+   		var clicked = false;
+   		var $document = $(document);
+
+
+   		$document.mousemove(function(e){
+     		$('#status').html(e.pageX +', '+ e.pageY);
+		
+			var canvas = document.getElementById('myCanvas');
+			var context = canvas.getContext('2d');
+
+			var colorChoice = "";
+			
+			var eraseFlag = false;
+
+			//select a color
+			$('#palette > div').on("click", function() {
+				var $this = $(this);
+				colorChoice = $this.css("background-color");
+				if ($this.hasClass('erase')) {
+					eraseFlag = true;
+					colorChoice = '#FFFFFF'; //erase hack
+				}
+			});
+
+			//console.log(canvas);
+   			canvas.addEventListener('mousedown', function(event){
+   				clicked = true;
+   				context.beginPath();
+   				context.moveTo(event.pageX, event.pageY);
+   			}, false);
+   			canvas.addEventListener('mousemove', function(event){
+   				if (clicked === true){
+   					context.strokeStyle = colorChoice;
+   						if (eraseFlag) {
+   							context.lineWidth = 10;
+   						}
+   					context.lineTo(event.pageX, event.pageY);
+   					context.stroke();
+   				}
+   			}, false);
+   			canvas.addEventListener('mouseup', function(){
+   				clicked = false;
+   			}, false);
+		});
+   	});
+
+	</script>
+</body>
+</html>

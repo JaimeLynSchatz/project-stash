@@ -1,0 +1,3 @@
+This is the code by codepo8, as taught in the tutorial on YouTube, how to create a simple paint program in vanilla JS.
+
+Codepo8 rocks!!

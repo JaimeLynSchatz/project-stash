@@ -1,0 +1,15 @@
+how pixels are represented
+
+struct uchar4 {
+//red
+unsigned char x;
+//green
+unsigned char y;
+//blue
+unsigned char z;
+//alpha (transparency)
+unsigned char w;
+
+
+// we perceive colors differently so we need to weigh the values of each color differently before we come up with an average to convert a color to a grey scale value
+I = .299f * R + .587f * G + .114f * B;

@@ -1,0 +1,28 @@
+/* This is the style sheet for the super duper scuba site */
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	background-color: #e2edff;
+	line-height: 1.25;
+	padding: 15px;
+}
+
+h1 {
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	font-size: x-large;
+}
+
+h2 {
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	font-size: medium;
+	font-weight: normal;
+}
+
+li {
+	font-size: small;
+}
+
+p {
+	font-size: small;
+	color: navy;
+}

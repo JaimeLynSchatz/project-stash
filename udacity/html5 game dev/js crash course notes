@@ -1,0 +1,7 @@
+// Declaring a javascript object using literal notation
+var RenderEngineClass = {
+	
+	//Declaring a method of an object
+	drawSTring : function (pString, pFontName, locX, locY, size, settings){
+	
+	}

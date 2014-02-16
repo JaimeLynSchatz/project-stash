@@ -1,0 +1,78 @@
+/* ------------------------------- */
+/* GLOBAL CSS
+/* ------------------------------- */
+html {
+	font-size: 76%;
+}
+
+body {
+	font-family: helvetica, sans-serif;
+	line-height: 1.4em;
+	font-size: 1.2em;
+	padding: 5%;
+}
+
+/* -------------------------------- */
+/* SLIDESHOW CSS
+/* -------------------------------- */
+#slideshow {
+	width: 960px;
+	background-color: #eee;
+	border: 1px solid #ddd;
+}
+
+#slideshow ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	height: 1%; /* I <3 IE, don't you? */
+}
+
+#slideshow ul:after {
+	content: ".";
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+/* ---------------------------------- */
+/* SLIDESHOW > SLIDES
+/* ---------------------------------- */
+#slideshow .slides {
+	overflow: hidden;
+	width: 960px;
+}
+
+#slideshow .slides ul {
+	/* total width of all slides - 960px X 4 in this case */
+	width: 4800px;
+}
+
+#slideshow .slides li {
+	width: 920px;
+	float: left;
+	padding: 20px;
+}
+
+#slideshow .slides h2 {
+	margin-top: 0;
+}
+
+/* ---------------------------------- */
+/* SLIDESHOW > NAVIGATION
+/* ---------------------------------- */
+#slideshow .slides-nav {
+	background-color: #ddd;
+	border-top: 2px solid #ccc;
+}
+
+#slideshow .slides-nav li {
+	float: left;
+}
+
+#slideshow .slides-nav li a {
+	display: block;
+	padding: 15px 20px;
+	outline: none;
+}

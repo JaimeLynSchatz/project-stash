@@ -1,0 +1,91 @@
+# check our seajure? later, when you're competent ;)
+
+lein help new will tell you what's new in the templates you've downloaded.  Project file will hold all the dependencies.  It "encourages" testing by building you a test file and documentation file to fill with useful stuff
+
+http://clojure.org/functional_programming
+check our jarvana
+
+(def hello (fn [] "Hello world"))
+-> #'user/hello
+(hello)
+-> "Hello world"
+download lein!  It's awsome
+
+everything's in a list
+(println "hello world")
+
+'(this single quote at the beginning will create a list of data w/o a function at the beginning)
+
+(fn [x] (+ x x))
+declares an anonymous function that will add x to itself
+
+(def f (fn [x] (+ x x)))
+
+defn is a shortcut for defining functions
+
+;; vectors
+[1 2 3]
+not an array, but a wide shallow tree
+very efficient, you'll use them a lot
+
+#[1 2 3} is a set
+
+{"two" 2} is a map or dictionary
+
+(seq) is an abstraction of all these data types
+kind of like ienumerable
+
+(cons 4 [1 2 3]_
+returns a lazy list of (4 1 2 3)
+
+(conj [1 2 3]4)
+returns a vector
+
+This is functional - all data structures are immutable, manipulation returns a new stucture
+
+Very efficient
+
+DATA STRUCTURES ARE ALL FUNCTIONS
+(get s 1)
+will return what you acked for.  If it's not there, it will return nil
+
+(e 1) will test if the item is there
+
+'let' keyword creates new scope
+
+(dir namespace)
+will list all functions decleared or in scope in that namaespace
+
+functions are somewhat overloaded - they'll work with just about any data structure in the language
+
+none of the data structures are strongly typed - you can put antynhing in there (anything that's in java)
+
+{:first-name "Bob" :last-name "jones"}
+
+eeeeverything's a function 
+
+first will get the 1st item, rest gets the rest of the list
+
+(reduce +[1 2 3])
+returns 6, the sum of one after the other
+
+( -> will help you link different nested functions together, n)
+
+->> the fat arrow is used for linking functions so that the data is at the end
+-> the regular arrow is used to linking functions so that the data is the first argument
+
+check out clojure in the field presentation online (off of github)
+
+stuctural typing - if it has a name, you can print it when you're printing the names of things
+
+"verbStevely's blog rants" on blogger-oriented programming" -- ""
+
+macrorespond will expland out a macro so you can see what's going into it (kind of like source will reveal the sourece code of a function)
+
+you can use macros just like you would - to save key strokes.  But they are NOT functions.
+
+syme on github technomancy will facilitate pair programming in the cloud EC2
+
+
+
+

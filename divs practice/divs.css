@@ -1,0 +1,11 @@
+html {
+	background-color: #dd22ff;
+}
+
+.square {
+	border: solid 1px black;
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+}
+

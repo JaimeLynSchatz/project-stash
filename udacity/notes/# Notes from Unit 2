@@ -1,0 +1,30 @@
+# Notes from Unit 2
+"<b> some bold text </b>"
+a = "some bold text"
+"<b> %s </b>" %a
+
+def write_form(error=""):
+	self.response.out.write(form % {"error": error})
+
+# Escaping Bad Input
+ " ->> &quot;
+ > -> &gt;
+ < -> &lt;
+ & -> &amp;"
+
+# Another way to do this:
+# Use the built-in function!!
+#
+#import cgi
+
+def escape_html(s):
+	return cgi.escape(s, quote = True)
+
+	// quote = True makes sure that the code escapes the quotes
+
+ROT13:
+Keep case, preserve punctuation and whitespace
+You might need to escape html
+use a textarea
+submit switches between the ROT13 and unscrambled
+

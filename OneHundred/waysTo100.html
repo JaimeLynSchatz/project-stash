@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>How Many Ways to 100?</title>
+	
+	<script type="text/javascript" src="myJQuery.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+	<div id="chart" class="left">
+		<table>
+			<tr id="rowsStump"></tr>
+			<tr id="ones">
+				<!--This is a hack to make the table generation work until I find a better way!-->
+				<td id="row1Stump" class="stump"></td>
+			</tr>
+			
+		</table>
+	</div>
+	
+	<div class="right">
+		<input type="button" class="red-background" value="Count by 2s" />
+		<input type="button" class="blue-background" value="Count by 5s" />
+		<input type="button" class="yellow-background" value="Count by 10s" />
+	</div>
+	

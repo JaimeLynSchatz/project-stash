@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>The this Keyword</title>
+</head>
+<body>
+
+
+<a href="http://tutsplus.com">Click Me</a>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script>
+
+var obj = {
+	doIt: function(e){
+		e.preventDefault();
+		console.log(this);
+	}
+}
+
+function doSomething(e) {
+	e.preventDefault();
+	console.log(this);	
+}
+
+$('a').on('click', obj.doIt);
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
